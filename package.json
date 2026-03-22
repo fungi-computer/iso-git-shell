@@ -1,0 +1,40 @@
+{
+  "name": "iso-git-shell",
+  "version": "0.1.0",
+  "description": "Isomorphic-git adapter for @cloudflare/shell filesystem",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@cloudflare/shell": "^0.1.1",
+    "isomorphic-git": "^1.27.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250313.0",
+    "typescript": "^5.7.3",
+    "vitest": "^4.1.0"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "isomorphic-git",
+    "git"
+  ],
+  "license": "MIT"
+}
