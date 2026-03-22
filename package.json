@@ -1,7 +1,7 @@
 {
   "name": "iso-git-shell",
   "version": "0.1.0",
-  "description": "Isomorphic-git adapter for @cloudflare/shell filesystem",
+  "description": "Isomorphic-git adapter for @cloudflare/shell filesystem. Enables git clone, commit, push, and branch operations in Cloudflare Workers.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -21,12 +21,27 @@
     "test:watch": "vitest",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "@cloudflare/shell": "^0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fungi-computer/iso-git-shell",
+    "directory": "packages/iso-git-shell"
+  },
+  "bugs": {
+    "url": "https://github.com/fungi-computer/iso-git-shell/issues"
+  },
+  "homepage": "https://github.com/fungi-computer/iso-git-shell#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
     "isomorphic-git": "^1.27.2"
+  },
+  "dependencies": {
+    "@cloudflare/shell": "^0.1.1"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250313.0",
+    "isomorphic-git": "^1.27.2",
     "typescript": "^5.7.3",
     "vitest": "^4.1.0"
   },
@@ -34,7 +49,9 @@
     "cloudflare",
     "workers",
     "isomorphic-git",
-    "git"
+    "git",
+    "filesystem",
+    "in-memory"
   ],
   "license": "MIT"
 }
